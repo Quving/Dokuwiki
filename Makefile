@@ -1,4 +1,3 @@
-build:
-	docker build -t dokuwiki:latest . 
-run:
-	docker run -it -d --name dokuwiki -p 33121:80 dokuwiki:latest
+docker_start:
+	docker run --restart=always -d -p 9080:80 --name dokuwiki \
+		-v /srv/dokuwiki:/dokuwiki mprasil/dokuwiki:latest
